@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Comigo?</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .painel {
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: relative;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: #ff85c0;;
+            border: white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -75px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: #ff85c0;;
+            border: white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="painel">
+        <h1>Helena Brant</h1>
+        <img src="https://media1.tenor.com/m/VzQsa71LAG8AAAAC/emoji.gif" alt="" width="200px">
+        <h4>Aceita um date comigo?</h4>
+        <a href="https://victorskilldev.github.io/Aceitou/"><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao");
+            var painel = document.querySelector(".painel");
+
+            // Obter as dimensões do painel
+            var larguraPainel = painel.clientWidth;
+            var alturaPainel = painel.clientHeight;
+
+            // Subtrair as dimensões do botão para manter dentro do painel
+            var maxX = larguraPainel - botaoNao.offsetWidth;
+            var maxY = alturaPainel - botaoNao.offsetHeight;
+
+            // Obter posições aleatórias dentro do painel
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            // Posicionar o botão dentro do painel
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+        function irParaNovaPagina() {
+            window.location.href = "nova_pagina.html"; // Altere para o caminho correto da nova página
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
